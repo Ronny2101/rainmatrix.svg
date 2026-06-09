@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="300" viewBox="0 0 1600 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00ff95"/>
+      <stop offset="100%" stop-color="#00c853"/>
+    </linearGradient>
+
+    <!-- subtle vignette -->
+    <radialGradient id="vignette" cx="50%" cy="45%" r="70%">
+      <stop offset="0%" stop-color="#0a0f0c"/>
+      <stop offset="80%" stop-color="#060906"/>
+      <stop offset="100%" stop-color="#030504"/>
+    </radialGradient>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.6" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/><feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- trail fade (head bright, tail dim) -->
+    <linearGradient id="trail" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="white" stop-opacity="0.95"/>
+      <stop offset="25%" stop-color="white" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0.05"/>
+    </linearGradient>
+    <mask id="trailMask">
+      <rect width="100%" height="100%" fill="url(#trail)"/>
+    </mask>
+
+    <!-- One binary column -->
+    <symbol id="col">
+      <text x="0" y="0" font-size="22" font-family="JetBrains Mono,Consolas,monospace"
+            fill="url(#g)" filter="url(#glow)" xml:space="preserve" letter-spacing="1">
+        0<tspan x="0" dy="22">1</tspan><tspan x="0" dy="22">0</tspan><tspan x="0" dy="22">1</tspan>
+        <tspan x="0" dy="22">0</tspan><tspan x="0" dy="22">1</tspan><tspan x="0" dy="22">0</tspan>
+        <tspan x="0" dy="22">1</tspan><tspan x="0" dy="22">0</tspan><tspan x="0" dy="22">1</tspan>
+        <tspan x="0" dy="22">0</tspan><tspan x="0" dy="22">1</tspan><tspan x="0" dy="22">0</tspan>
+        <tspan x="0" dy="22">1</tspan><tspan x="0" dy="22">0</tspan><tspan x="0" dy="22">1</tspan>
+        <tspan x="0" dy="22">0</tspan><tspan x="0" dy="22">1</tspan><tspan x="0" dy="22">0</tspan>
+        <tspan x="0" dy="22">1</tspan><tspan x="0" dy="22">0</tspan><tspan x="0" dy="22">1</tspan>
+      </text>
+    </symbol>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#vignette)"/>
+
+  <!-- RAIN -->
+  <g opacity="0.96" mask="url(#trailMask)">
+    <!-- Dense: x every ~28px from 10..1590; randomized speeds -->
+    <!-- Left to right; you can add/remove <use> to tune density/perf -->
+    <!-- chunk 1 -->
+    <use href="#col" x="10"><animateTransform attributeName="transform" type="translate" from="0 -420" to="0 360" dur="4.2s" repeatCount="indefinite"/></use>
+    <use href="#col" x="38"><animateTransform attributeName="transform" type="translate" from="0 -360" to="0 360" dur="5.1s" repeatCount="indefinite"/></use>
+    <use href="#col" x="66"><animateTransform attributeName="transform" type="translate" from="0 -390" to="0 360" dur="6.2s" repeatCount="indefinite"/></use>
+    <use href="#col" x="94"><animateTransform attributeName="transform" type="translate" from="0 -350" to="0 360" dur="4.6s" repeatCount="indefinite"/></use>
+    <use href="#col" x="122"><animateTransform attributeName="transform" type="translate" from="0 -370" to="0 360" dur="5.6s" repeatCount="indefinite"/></use>
+    <use href="#col" x="150"><animateTransform attributeName="transform" type="translate" from="0 -330" to="0 360" dur="4.0s" repeatCount="indefinite"/></use>
+    <use href="#col" x="178"><animateTransform attributeName="transform" type="translate" from="0 -400" to="0 360" dur="6.5s" repeatCount="indefinite"/></use>
+    <use href="#col" x="206"><animateTransform attributeName="transform" type="translate" from="0 -360" to="0 360" dur="5.0s" repeatCount="indefinite"/></use>
+    <use href="#col" x="234"><animateTransform attributeName="transform" type="translate" from="0 -380" to="0 360" dur="6.1s" repeatCount="indefinite"/></use>
+    <use href="#col" x="262"><animateTransform attributeName="transform" type="translate" from="0 -340" to="0 360" dur="4.3s" repeatCount="indefinite"/></use>
+    <!-- chunk 2 (copy this pattern to add even more density) -->
+    <use href="#col" x="290"><animateTransform attributeName="transform" type="translate" from="0 -420" to="0 360" dur="5.9s" repeatCount="indefinite"/></use>
+    <use href="#col" x="318"><animateTransform attributeName="transform" type="translate" from="0 -360" to="0 360" dur="4.8s" repeatCount="indefinite"/></use>
+    <use href="#col" x="346"><animateTransform attributeName="transform" type="translate" from="0 -390" to="0 360" dur="6.4s" repeatCount="indefinite"/></use>
+    <use href="#col" x="374"><animateTransform attributeName="transform" type="translate" from="0 -350" to="0 360" dur="5.3s" repeatCount="indefinite"/></use>
+    <use href="#col" x="402"><animateTransform attributeName="transform" type="translate" from="0 -370" to="0 360" dur="4.5s" repeatCount="indefinite"/></use>
+    <use href="#col" x="430"><animateTransform attributeName="transform" type="translate" from="0 -330" to="0 360" dur="6.0s" repeatCount="indefinite"/></use>
+    <use href="#col" x="458"><animateTransform attributeName="transform" type="translate" from="0 -400" to="0 360" dur="5.2s" repeatCount="indefinite"/></use>
+    <use href="#col" x="486"><animateTransform attributeName="transform" type="translate" from="0 -360" to="0 360" dur="6.6s" repeatCount="indefinite"/></use>
+    <use href="#col" x="514"><animateTransform attributeName="transform" type="translate" from="0 -380" to="0 360" dur="4.9s" repeatCount="indefinite"/></use>
+    <use href="#col" x="542"><animateTransform attributeName="transform" type="translate" from="0 -340" to="0 360" dur="4.1s" repeatCount="indefinite"/></use>
+    <!-- chunk 3 -->
+    <use href="#col" x="570"><animateTransform attributeName="transform" type="translate" from="0 -420" to="0 360" dur="6.3s" repeatCount="indefinite"/></use>
+    <use href="#col" x="598"><animateTransform attributeName="transform" type="translate" from="0 -360" to="0 360" dur="5.7s" repeatCount="indefinite"/></use>
+    <use href="#col" x="626"><animateTransform attributeName="transform" type="translate" from="0 -390" to="0 360" dur="4.7s" repeatCount="indefinite"/></use>
+    <use href="#col" x="654"><animateTransform attributeName="transform" type="translate" from="0 -350" to="0 360" dur="6.2s" repeatCount="indefinite"/></use>
+    <use href="#col" x="682"><animateTransform attributeName="transform" type="translate" from="0 -370" to="0 360" dur="5.1s" repeatCount="indefinite"/></use>
+    <use href="#col" x="710"><animateTransform attributeName="transform" type="translate" from="0 -330" to="0 360" dur="4.2s" repeatCount="indefinite"/></use>
+    <use href="#col" x="738"><animateTransform attributeName="transform" type="translate" from="0 -400" to="0 360" dur="6.5s" repeatCount="indefinite"/></use>
+    <use href="#col" x="766"><animateTransform attributeName="transform" type="translate" from="0 -360" to="0 360" dur="4.6s" repeatCount="indefinite"/></use>
+    <use href="#col" x="794"><animateTransform attributeName="transform" type="translate" from="0 -380" to="0 360" dur="5.8s" repeatCount="indefinite"/></use>
+    <use href="#col" x="822"><animateTransform attributeName="transform" type="translate" from="0 -340" to="0 360" dur="6.0s" repeatCount="indefinite"/></use>
+    <!-- chunk 4 -->
+    <use href="#col" x="850"><animateTransform attributeName="transform" type="translate" from="0 -420" to="0 360" dur="4.4s" repeatCount="indefinite"/></use>
+    <use href="#col" x="878"><animateTransform attributeName="transform" type="translate" from="0 -360" to="0 360" dur="6.7s" repeatCount="indefinite"/></use>
+    <use href="#col" x="906"><animateTransform attributeName="transform" type="translate" from="0 -390" to="0 360" dur="5.6s" repeatCount="indefinite"/></use>
+    <use href="#col" x="934"><animateTransform attributeName="transform" type="translate" from="0 -350" to="0 360" dur="4.8s" repeatCount="indefinite"/></use>
+    <use href="#col" x="962"><animateTransform attributeName="transform" type="translate" from="0 -370" to="0 360" dur="6.1s" repeatCount="indefinite"/></use>
+    <use href="#col" x="990"><animateTransform attributeName="transform" type="translate" from="0 -330" to="0 360" dur="4.3s" repeatCount="indefinite"/></use>
+    <use href="#col" x="1018"><animateTransform attributeName="transform" type="translate" from="0 -400" to="0 360" dur="5.9s" repeatCount="indefinite"/></use>
+    <use href="#col" x="1046"><animateTransform attributeName="transform" type="translate" from="0 -360" to="0 360" dur="5.0s" repeatCount="indefinite"/></use>
+    <use href="#col" x="1074"><animateTransform attributeName="transform" type="translate" from="0 -380" to="0 360" dur="4.1s" repeatCount="indefinite"/></use>
+    <use href="#col" x="1102"><animateTransform attributeName="transform" type="translate" from="0 -340" to="0 360" dur="5.3s" repeatCount="indefinite"/></use>
+    <!-- chunk 5 -->
+    <use href="#col" x="1130"><animateTransform attributeName="transform" type="translate" from="0 -420" to="0 360" dur="6.4s" repeatCount="indefinite"/></use>
+    <use href="#col" x="1158"><animateTransform attributeName="transform" type="translate" from="0 -360" to="0 360" dur="4.7s" repeatCount="indefinite"/></use>
+    <use href="#col" x="1186"><animateTransform attributeName="transform" type="translate" from="0 -390" to="0 360" dur="6.6s" repeatCount="indefinite"/></use>
+    <use href="#col" x="1214"><animateTransform attributeName="transform" type="translate" from="0 -350" to="0 360" dur="5.2s" repeatCount="indefinite"/></use>
+    <use href="#col" x="1242"><animateTransform attributeName="transform" type="translate" from="0 -370" to="0 360" dur="4.2s" repeatCount="indefinite"/></use>
+    <use href="#col" x="1270"><animateTransform attributeName="transform" type="translate" from="0 -330" to="0 360" dur="5.8s" repeatCount="indefinite"/></use>
+    <use href="#col" x="1298"><animateTransform attributeName="transform" type="translate" from="0 -400" to="0 360" dur="4.5s" repeatCount="indefinite"/></use>
+    <use href="#col" x="1326"><animateTransform attributeName="transform" type="translate" from="0 -360" to="0 360" dur="6.3s" repeatCount="indefinite"/></use>
+    <use href="#col" x="1354"><animateTransform attributeName="transform" type="translate" from="0 -380" to="0 360" dur="5.5s" repeatCount="indefinite"/></use>
+    <use href="#col" x="1382"><animateTransform attributeName="transform" type="translate" from="0 -340" to="0 360" dur="4.6s" repeatCount="indefinite"/></use>
+    <!-- tail -->
+    <use href="#col" x="1410"><animateTransform attributeName="transform" type="translate" from="0 -420" to="0 360" dur="4.9s" repeatCount="indefinite"/></use>
+    <use href="#col" x="1438"><animateTransform attributeName="transform" type="translate" from="0 -360" to="0 360" dur="6.1s" repeatCount="indefinite"/></use>
+    <use href="#col" x="1466"><animateTransform attributeName="transform" type="translate" from="0 -390" to="0 360" dur="5.0s" repeatCount="indefinite"/></use>
+    <use href="#col" x="1494"><animateTransform attributeName="transform" type="translate" from="0 -350" to="0 360" dur="6.7s" repeatCount="indefinite"/></use>
+    <use href="#col" x="1522"><animateTransform attributeName="transform" type="translate" from="0 -370" to="0 360" dur="4.4s" repeatCount="indefinite"/></use>
+    <use href="#col" x="1550"><animateTransform attributeName="transform" type="translate" from="0 -330" to="0 360" dur="5.6s" repeatCount="indefinite"/></use>
+    <use href="#col" x="1578"><animateTransform attributeName="transform" type="translate" from="0 -400" to="0 360" dur="6.5s" repeatCount="indefinite"/></use>
+  </g>
+
+  <text x="50%" y="54%" text-anchor="middle" fill="#D0FFD9" font-size="38"
+        font-family="Poppins,Inter,Segoe UI,Arial" style="letter-spacing:0.5px">Adam (Mirjalol Esanov)</text>
+  <text x="50%" y="76%" text-anchor="middle" fill="#89FF9B" font-size="18"
+        font-family="JetBrains Mono,Consolas,monospace">Software Engineer</text>
+</svg>
